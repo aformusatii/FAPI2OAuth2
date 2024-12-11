@@ -4,7 +4,7 @@ const qs = require('qs');
 // Replace with your values
 const tokenEndpoint = 'http://192.168.100.3:8028/realms/master/protocol/openid-connect/token';
 const clientId = 'test-app1';
-const clientSecret = 'ysid0qrTziBTMKQwBNBqKGmRCLGxrJAB';
+const clientSecret = 'Te70PovyEHY5OInQulASurXfAideHyDT';
 
 // Function to get the access token
 async function getAccessToken() {

@@ -3,11 +3,12 @@ const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+const { printJwt } = require('./utils');
 
 // Replace with your values
 const tokenEndpoint = 'http://192.168.100.3:8028/realms/master/protocol/openid-connect/token';
 const clientId = 'test-app2';
-const privateKeyPath = path.join(__dirname, 'keys','keypair.pem'); // Path to your RSA private key
+const privateKeyPath = path.join(__dirname, 'keys1','keypair.pem'); // Path to your RSA private key
 
 // Function to load the private key
 function loadPrivateKey() {
@@ -44,6 +45,8 @@ async function getAccessToken() {
     });
 
     console.log('Response:', response.data);
+    printJwt(response.data.access_token);
+
     return response.data.access_token;
   } catch (error) {
     console.error('Error obtaining access token:', error.response ? error.response.data : error.message);
